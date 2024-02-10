@@ -124,7 +124,7 @@ def get_locations():
     user_lat = request.json['user_lat']
     user_lon = request.json['user_lon']
     locations = [l._asdict() for l in get_locations_using_cpt(codes)]
-    locations = [l for l in locations if calculate_distance(user_lat, user_lon, l['latitude'], l['longitude']) < 50.0]
+    locations = [l for l in locations if calculate_distance(user_lat, user_lon, l['latitude'], l['longitude']) < 150.0]
     return locations
 
 
