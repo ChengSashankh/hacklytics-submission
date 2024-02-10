@@ -84,6 +84,13 @@ def get_locations_using_cpt(cpt_codes: List[str]):
         return rs.all()
 
 
+def get_short_desc_by_cpt(cpt_code: str):
+    sql = text( f"SELECT c.short_description FROM CMS c WHERE c.CPT_CODE = '{cpt_code}'")
+    with engine.connect() as con:
+        rs = con.execute(sql)
+        return rs.all()[0]._asdict()['short_description']
+
+
 app = Flask(__name__)
 
 
@@ -111,9 +118,14 @@ def search():
     query = request.json['query']
     complaint = get_complaint_from_search_text(query)
     result = query_complaint(complaint)
+    print (result[0][0])
     result_dict = [{"desc": doc[0].page_content.split('\n')[1],
                     "cpt_code": doc[0].page_content.split('\n')[0].split('cpt_code: ')[-1],
                     "metadata": doc[0].metadata} for doc in result]
+
+    for r in result_dict:
+        r['short_desc'] = get_short_desc_by_cpt(r['cpt_code'])
+
     return jsonify(result_dict)
 
 
@@ -134,4 +146,4 @@ def calculate_distance(point_a_lat, point_a_lon, point_b_lat, point_b_lon):
 
 if __name__ == '__main__':
     #app.config.from_pyfile('config.cfg')
-    app.run(debug=True)
+    app.run()
