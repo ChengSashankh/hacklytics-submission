@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80000fda-532c-461d-ad57-14d90e271c09" name="Changes" comment="" />
+    <list default="true" id="80000fda-532c-461d-ad57-14d90e271c09" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/insurance_imports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f/storage_v2/_src_/database/dbgitidqah3a5l.rtRYzQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f/storage_v2/_src_/database/dbgitidqah3a5l.rtRYzQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/augment_cpt_codes_short.py" beforeDir="false" afterPath="$PROJECT_DIR$/augment_cpt_codes_short.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/semantic_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/semantic_search.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,13 +56,14 @@
     "Python.augment_cpt_codes.executor": "Debug",
     "Python.augment_cpt_codes_short.executor": "Run",
     "Python.clean_allegheny_data.executor": "Run",
+    "Python.insurance_imports.executor": "Run",
     "Python.main.executor": "Run",
     "Python.semantic-search.executor": "Run",
     "Python.semantic_search.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "database.data.extractors.current.export.id": "CSV-Groovy.csv.groovy",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/cksash/PycharmProjects/hacklytics",
     "node.js.detected.package.eslint": "true",
@@ -76,7 +84,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.semantic_search">
+  <component name="RunManager" selected="Python.insurance_imports">
     <configuration name="add_short_desc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hacklytics" />
       <option name="ENV_FILES" value="" />
@@ -170,7 +178,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="insurance_imports" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hacklytics" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,12 +187,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ui" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/insurance_imports.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -222,16 +230,16 @@
       <item itemvalue="Python.add_short_desc" />
       <item itemvalue="Python.augment_cpt_codes_short" />
       <item itemvalue="Python.clean_allegheny_data" />
-      <item itemvalue="Python.main" />
+      <item itemvalue="Python.insurance_imports" />
       <item itemvalue="Python.semantic_search" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.insurance_imports" />
         <item itemvalue="Python.semantic_search" />
         <item itemvalue="Python.add_short_desc" />
         <item itemvalue="Python.augment_cpt_codes_short" />
         <item itemvalue="Python.clean_allegheny_data" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -250,7 +258,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707536509593</updated>
-      <workItem from="1707536511476" duration="35631000" />
+      <workItem from="1707536511476" duration="59589000" />
     </task>
     <servers />
   </component>
@@ -262,17 +270,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/semantic_search.py</url>
-          <line>134</line>
+          <line>182</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/semantic_search.py</url>
-          <line>106</line>
+          <line>130</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/semantic_search.py</url>
-          <line>119</line>
+          <line>143</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
@@ -281,8 +289,9 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/hacklytics$main.coverage" NAME="main Coverage Results" MODIFIED="1707550625762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ui" />
     <SUITE FILE_PATH="coverage/hacklytics$add_short_desc.coverage" NAME="add_short_desc Coverage Results" MODIFIED="1707597641878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/hacklytics$semantic_search.coverage" NAME="semantic_search Coverage Results" MODIFIED="1707599403554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hacklytics$semantic_search.coverage" NAME="semantic_search Coverage Results" MODIFIED="1707626810018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/hacklytics$augment_cpt_codes_short.coverage" NAME="augment_cpt_codes_short Coverage Results" MODIFIED="1707594071195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/hacklytics$insurance_imports.coverage" NAME="insurance_imports Coverage Results" MODIFIED="1707652376554" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/hacklytics$clean_allegheny_data.coverage" NAME="clean_allegheny_data Coverage Results" MODIFIED="1707593728722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>

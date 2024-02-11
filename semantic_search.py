@@ -161,7 +161,7 @@ def get_locations_by_cpt_hospital():
     user_lon = request.json['user_lon']
     hospital_id = request.json['hospital_id']
     locations = [l._asdict() for l in get_prices_by_cpt_and_hospital(codes, hospital_id)]
-    locations = [l for l in locations if calculate_distance(user_lat, user_lon, l['latitude'], l['longitude']) < 150.0]
+    # locations = [l for l in locations if calculate_distance(user_lat, user_lon, l['latitude'], l['longitude']) < 150.0]
     return locations
 
 
