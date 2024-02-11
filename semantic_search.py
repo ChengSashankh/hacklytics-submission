@@ -2,6 +2,7 @@ import json
 import os.path
 from typing import List
 
+from flask_cors import CORS
 from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.document_loaders import CSVLoader
 from langchain_community.vectorstores import FAISS
@@ -146,4 +147,5 @@ def calculate_distance(point_a_lat, point_a_lon, point_b_lat, point_b_lon):
 
 if __name__ == '__main__':
     #app.config.from_pyfile('config.cfg')
+    cors = CORS(app, resources={r"*": {"origins": "*"}})
     app.run()
