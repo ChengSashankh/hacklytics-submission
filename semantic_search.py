@@ -93,7 +93,7 @@ def get_short_desc_by_cpt(cpt_code: str):
 
 
 app = Flask(__name__)
-
+cors = CORS(app)
 
 from functools import wraps
 from flask import request, abort
@@ -147,5 +147,4 @@ def calculate_distance(point_a_lat, point_a_lon, point_b_lat, point_b_lon):
 
 if __name__ == '__main__':
     #app.config.from_pyfile('config.cfg')
-    cors = CORS(app, resources={r"*": {"origins": "*"}})
     app.run()
