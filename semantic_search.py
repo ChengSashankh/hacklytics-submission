@@ -74,7 +74,7 @@ def get_complaint_from_search_text(search_text: str):
     return search_text
 
 
-def get_locations_using_cpt(cpt_codes: List[str]):
+def get_locations_by_cpt(cpt_codes: List[str]):
     where_clause = ", ".join([f"\'{c}\'" for c in cpt_codes])
     with engine.connect() as con:
         print(
@@ -83,6 +83,29 @@ def get_locations_using_cpt(cpt_codes: List[str]):
             f"SELECT c.cpt_code, h.hospital_id, h.address, h.hospital_name, h.latitude, h.longitude, hgp.procedure, hgp.charges, hgp.discounted_charges, hgp.min_negotiated, hgp.max_negotiated FROM hospital_general_prices hgp JOIN cms c ON hgp.cpt_code = c.cpt_code JOIN hospitals h ON h.hospital_id = hgp.hospital_id WHERE hgp.CPT_CODE IN ({where_clause})")
         rs = con.execute(statement)
         return rs.all()
+
+
+def get_prices_by_cpt_and_hospital(cpt_codes: List[str], hospital_id: str):
+    cpt_where_clause = ", ".join([f"\'{c}\'" for c in cpt_codes])
+    with engine.connect() as con:
+        print(
+            f"SELECT * FROM hospital_insurance_prices hip JOIN hospitals h ON h.hospital_id = hip.hospital_id JOIN insurance i ON hip.provider_id = i.provider_id WHERE hip.CPT_CODE IN ({cpt_where_clause}) AND h.hospital_id = '{hospital_id}'")
+        statement = text(
+            f"SELECT * FROM hospital_insurance_prices hip JOIN hospitals h ON h.hospital_id = hip.hospital_id JOIN insurance i ON hip.provider_id = i.provider_id WHERE hip.CPT_CODE IN ({cpt_where_clause}) AND h.hospital_id = '{hospital_id}'")
+        rs = con.execute(statement)
+        return rs.all()
+
+
+def get_prices_by_cpt_and_insurance(cpt_codes: List[str], insurance_id: str):
+    cpt_where_clause = ", ".join([f"\'{c}\'" for c in cpt_codes])
+    with engine.connect() as con:
+        print(
+            f"SELECT * FROM hospital_insurance_prices hip JOIN hospitals h ON h.hospital_id = hip.hospital_id JOIN insurance i ON hip.provider_id = i.provider_id WHERE hip.CPT_CODE IN ({cpt_where_clause}) AND i.provider_id = '{insurance_id}'")
+        statement = text(
+            f"SELECT * FROM hospital_insurance_prices hip JOIN hospitals h ON h.hospital_id = hip.hospital_id JOIN insurance i ON hip.provider_id = i.provider_id WHERE hip.CPT_CODE IN ({cpt_where_clause}) AND i.provider_id = '{insurance_id}'")
+        rs = con.execute(statement)
+        return rs.all()
+
 
 
 def get_short_desc_by_cpt(cpt_code: str):
@@ -130,13 +153,37 @@ def search():
     return jsonify(result_dict)
 
 
+@app.route('/locations/byCptAndHospital', methods=["POST"])
+@require_appkey
+def get_locations_by_cpt_hospital():
+    codes = request.json['cpt_codes']
+    user_lat = request.json['user_lat']
+    user_lon = request.json['user_lon']
+    hospital_id = request.json['hospital_id']
+    locations = [l._asdict() for l in get_prices_by_cpt_and_hospital(codes, hospital_id)]
+    locations = [l for l in locations if calculate_distance(user_lat, user_lon, l['latitude'], l['longitude']) < 150.0]
+    return locations
+
+
+@app.route('/locations/byCptAndInsurance', methods=["POST"])
+@require_appkey
+def get_locations_by_cpt_insurance():
+    codes = request.json['cpt_codes']
+    user_lat = request.json['user_lat']
+    user_lon = request.json['user_lon']
+    insurance_id = request.json['insurance_id']
+    locations = [l._asdict() for l in get_prices_by_cpt_and_insurance(codes, insurance_id)]
+    locations = [l for l in locations if calculate_distance(user_lat, user_lon, l['latitude'], l['longitude']) < 150.0]
+    return locations
+
+
 @app.route('/locations/', methods=["POST"])
 @require_appkey
 def get_locations():
     codes = request.json['cpt_codes']
     user_lat = request.json['user_lat']
     user_lon = request.json['user_lon']
-    locations = [l._asdict() for l in get_locations_using_cpt(codes)]
+    locations = [l._asdict() for l in get_locations_by_cpt(codes)]
     locations = [l for l in locations if calculate_distance(user_lat, user_lon, l['latitude'], l['longitude']) < 150.0]
     return locations
 
