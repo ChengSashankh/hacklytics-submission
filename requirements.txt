@@ -15,6 +15,7 @@ distro==1.9.0
 faiss-cpu==1.7.4
 Flask==2.3.3
 flask-api-key==0.2.12
+Flask-Cors==4.0.0
 folium==0.15.1
 frozenlist==1.4.1
 geographiclib==2.0
