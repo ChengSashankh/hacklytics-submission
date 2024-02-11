@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="80000fda-532c-461d-ad57-14d90e271c09" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/insurance_imports.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f/storage_v2/_src_/database/dbgitidqah3a5l.rtRYzQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6a705592-0cc0-4263-9d42-21c4771c819f/storage_v2/_src_/database/dbgitidqah3a5l.rtRYzQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/augment_cpt_codes.py" beforeDir="false" afterPath="$PROJECT_DIR$/augment_cpt_codes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/augment_cpt_codes_short.py" beforeDir="false" afterPath="$PROJECT_DIR$/augment_cpt_codes_short.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/add_short_desc.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/add_short_desc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/insurance_imports.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/insurance_imports.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/semantic_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/semantic_search.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -258,7 +258,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1707536509593</updated>
-      <workItem from="1707536511476" duration="59589000" />
+      <workItem from="1707536511476" duration="61348000" />
     </task>
     <servers />
   </component>

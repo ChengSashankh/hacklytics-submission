@@ -36,7 +36,7 @@ class HospitalGeneralPrices(Base):
 
 
 engine = create_engine(
-    "postgresql://kodqrbmcuqhgdi:b4c7907bedf57277731a6a867809b5d888cab348b9bd151ce2e0e6a227325079@ec2-44-213-151-75.compute-1.amazonaws.com:5432/dbgitidqah3a5l")
+    "")
 
 loader = CSVLoader(
     file_path='./data/cpt_codes_with_desc.csv',
@@ -44,8 +44,8 @@ loader = CSVLoader(
 )
 
 print("Loading embeddings")
-embeddings = OpenAIEmbeddings(api_key='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',
-                              organization='org-JmTkwXW5KD9MhhWngn5cUec6')
+embeddings = OpenAIEmbeddings(api_key='',
+                              organization='')
 print("Loaded embeddings")
 
 if os.path.exists('faiss_index'):

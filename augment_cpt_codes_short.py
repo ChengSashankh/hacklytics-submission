@@ -11,8 +11,8 @@ from langchain_openai import OpenAI
 from tqdm import tqdm
 import pandas as pd
 
-llm = OpenAI(openai_api_key='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',
-             openai_organization='org-JmTkwXW5KD9MhhWngn5cUec6')
+llm = OpenAI(openai_api_key='',
+             openai_organization='')
 
 # OPENAI_API_KEY = getpass()
 # os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
